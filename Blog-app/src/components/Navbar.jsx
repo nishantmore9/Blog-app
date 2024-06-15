@@ -35,7 +35,8 @@ const Navbar = () => {
 
   return (
     <nav className='flex justify-between items-center max-w-5xl m-auto h-16'>
-      <div>
+      <div className='flex gap-3 items-center'>
+        <img src="https://img.icons8.com/?size=100&id=58240&format=png&color=000000" alt="img" width={50} height={50} />
         <Link to="/"><h1 className='font-bold text-2xl font-mono'>Blog-Spot</h1></Link>
       </div>
       <div>

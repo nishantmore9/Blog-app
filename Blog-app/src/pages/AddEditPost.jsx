@@ -31,7 +31,7 @@ const AddEditPost = () => {
       data.set("file", files?.[0])
     }
     e.preventDefault()
-    const response = await fetch("/api/post",{
+    const response = await fetch("/api/user/post",{
       method : "PUT",
       body : data,
       credentials : "include"
