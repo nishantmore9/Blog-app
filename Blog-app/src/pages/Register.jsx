@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   const [username, setUsername] = useState('')
@@ -15,13 +16,15 @@ const Register = () => {
       body : JSON.stringify({username,email,password}),
       headers : {"Content-Type" : "application/json"}
     })
+    const data = await response.json()
 
     if(response.status === 200) {
       alert("Registraton succesful")
       navigate("/login")
-    } else {
-      alert("registration failed")
     }
+     else {
+       alert("registration failed")
+     }
   }
 
   return (
@@ -50,6 +53,9 @@ const Register = () => {
         onChange={(e) => setPassword(e.target.value)}
         />
         <button className='bg-black text-white p-4 uppercase'>Register</button>
+        <div>
+          <p>already a user? <Link to ="/login" className="text-blue-500">log in</Link></p>
+        </div>
       </form>
     </section>
   )

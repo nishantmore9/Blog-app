@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { UserContext } from "../userContext";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -55,7 +56,10 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="bg-black text-white p-4 ">Log in</button>
+        <button className="bg-black text-white p-4 uppercase">Log in</button>
+        <div>
+          <p>new user? <Link to ="/register" className="text-blue-500">register</Link></p>
+        </div>
       </form>
     </section>
   );
